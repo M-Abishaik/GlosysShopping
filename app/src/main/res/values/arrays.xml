@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="array_payment_options">
+        <item>@string/payment_unknown</item>
+        <item>@string/payment_visa</item>
+        <item>@string/payment_unionpay</item>
+        <item>@string/payment_discover</item>
+        <item>@string/payment_amexpress</item>
+    </string-array>
+</resources>

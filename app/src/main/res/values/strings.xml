@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ShopMe</string>
+    <string name="instruct">1. All the customers must have registered themselves before purchasing the product.\n\n2. The customers must pay their amount according to Shop-a-mazon procedures. Any violation may result in denial of purchase.\n\n3. Shop-a-mazon is not responsible for customers security and privacy.\n\n4. While using the payment gateway, please adhere to the rules and regulations provided by the management.\n\n5. Refrain from reporting about any small mis-calculations with the marketers. We are, after all, here to help you have a pleasant experience.\n\n6. Delivery charges are a must irrespective of the location of customer.</string>
+
+    <string name="payment_unknown">Unknown</string>
+    <string name="payment_visa">Visa</string>
+    <string name="payment_unionpay">Union Pay</string>
+    <string name="payment_discover">Discover Net</string>
+    <string name="payment_amexpress">American Express</string>
+    <string name="speech_prompt">Say something&#8230;</string>
+    <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
+    <string name="tap_on_mic">Tap on mic to speak</string>
+    <string name="checkout">Checkout</string>
+    <string name="add_to_cart">Add to Cart</string>
+
+</resources>
