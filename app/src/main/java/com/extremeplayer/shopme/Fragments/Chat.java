@@ -60,7 +60,7 @@ public class Chat extends Fragment implements MyInterface, AIListener{
 
         Log.d("Debug", "TESTING");
 
-        final AIConfiguration aiConfig = new AIConfiguration("b901e362e2cf4263aec1222668d13c1c",
+        final AIConfiguration aiConfig = new AIConfiguration("e9e2cc162ca644e0ab341b4549f3a493",
                 AIConfiguration.SupportedLanguages.English,
                 AIConfiguration.RecognitionEngine.System);
 

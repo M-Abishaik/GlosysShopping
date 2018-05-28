@@ -126,7 +126,6 @@ public class PaymentActivity extends AppCompatActivity {
                 param.put("email", mail);
                 param.put("productslist", products);
                 param.put("accno",accNum);
-                param.put("pinno",pinNo);
                 param.put("cost",String.valueOf(cost));
                 Log.d("TRIAL", mail + " " + products);
                 return param;

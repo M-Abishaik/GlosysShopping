@@ -2,15 +2,8 @@ package com.extremeplayer.shopme.UserActivities;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -34,8 +27,9 @@ import org.json.JSONObject;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-
+import java.util.Map;
 
 public class GadgetActivity extends Activity implements
         ProductListAdapter.ProductListAdapterListener{
@@ -46,6 +40,8 @@ public class GadgetActivity extends Activity implements
     private Button btnCheckout;
     private String mail = "null";
     private String category = "null";
+    private String id = "null", name = "null", description = "null", image = "null", sku = "null";
+    private BigDecimal price = new BigDecimal("0");
 
     private ProductListAdapter adapter;
 
@@ -68,7 +64,6 @@ public class GadgetActivity extends Activity implements
         if (userData != null) {
             mail = userData.getString("mail");
             category = userData.getString("type");
-            Log.d("TAG", mail);
         }
 
         listView = (ListView) findViewById(R.id.list);
@@ -97,7 +92,7 @@ public class GadgetActivity extends Activity implements
         showpDialog();
 
         // Making json object request
-        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST,
                 AppConfig.URL_PRODUCTS, null, new Response.Listener<JSONObject>() {
 
             @Override
@@ -154,7 +149,15 @@ public class GadgetActivity extends Activity implements
                 // hide the progress dialog
                 hidepDialog();
             }
-        });
+        }){
+
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("productKey", category);
+                return params;
+            }
+        };
 
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(jsonObjReq);

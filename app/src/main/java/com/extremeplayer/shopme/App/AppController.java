@@ -5,7 +5,9 @@ import android.text.TextUtils;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+import com.extremeplayer.shopme.LruBitmapCache;
 
 /**
  * Created by Abishaik on 01-09-2017.
@@ -15,10 +17,21 @@ public class AppController extends Application {
     public static final String TAG = AppController.class.getSimpleName();
     private static AppController mInstance;
     private RequestQueue mRequestQueue;
+    private ImageLoader mImageLoader;
 
     public static synchronized AppController getInstance() {
         return mInstance;
     }
+
+    public ImageLoader getImageLoader() {
+        getRequestQueue();
+        if (mImageLoader == null) {
+            mImageLoader = new ImageLoader(this.mRequestQueue,
+                    new LruBitmapCache());
+        }
+        return this.mImageLoader;
+    }
+
 
     @Override
     public void onCreate() {

@@ -8,9 +8,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
+
 
 import com.extremeplayer.shopme.Interface.MailInterface;
 import com.extremeplayer.shopme.Interface.MyInterface;
@@ -20,7 +19,7 @@ import com.extremeplayer.shopme.UserActivities.GadgetActivity;
 public class Dashboard extends Fragment implements MyInterface {
 
     ImageButton button1, button2, button3, button4, button5;
-    Button registerButton;
+    //Button registerButton;
     MailInterface mailInterface;
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -53,18 +52,18 @@ public class Dashboard extends Fragment implements MyInterface {
                 case R.id.product4:
                     intent = new Intent(getActivity(), GadgetActivity.class);
                     intent.putExtra("mail", mail);
-                    intent.putExtra("type", "Sports");
+                    intent.putExtra("type", "Sport");
                     startActivity(intent);
                     break;
                 case R.id.product5:
                     intent = new Intent(getActivity(), GadgetActivity.class);
                     intent.putExtra("mail", mail);
-                    intent.putExtra("type", "Veggies");
+                    intent.putExtra("type", "Veg");
                     startActivity(intent);
                     break;
-                case R.id.register_button:
+                /*case R.id.register_button:
                     Toast.makeText(getActivity(), "Payment under Alpha Testing.", Toast.LENGTH_SHORT).show();
-                    break;
+                    break;*/
                 default:
                     break;
             }
@@ -99,14 +98,14 @@ public class Dashboard extends Fragment implements MyInterface {
         button3 = (ImageButton) view.findViewById(R.id.product3);
         button4 = (ImageButton) view.findViewById(R.id.product4);
         button5 = (ImageButton) view.findViewById(R.id.product5);
-        registerButton = (Button) view.findViewById(R.id.register_button);
+        //registerButton = (Button) view.findViewById(R.id.register_button);
 
         button1.setOnClickListener(onClickListener);
         button2.setOnClickListener(onClickListener);
         button3.setOnClickListener(onClickListener);
         button4.setOnClickListener(onClickListener);
         button5.setOnClickListener(onClickListener);
-        registerButton.setOnClickListener(onClickListener);
+        //registerButton.setOnClickListener(onClickListener);
 
         return view;
     }
